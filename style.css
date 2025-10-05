@@ -490,8 +490,15 @@ body.nav-open .hamburger::after {
     }
 
     .section-padding {
-    padding: 80px 0;
-}
+        padding: 80px 0;
+    }
+    .cta { 
+        padding: 80px 0;
+    }
+
+    .services::before {
+        display: none;
+    }
     
     /* New wrapper for mobile above-the-fold content */
     .hero-content-top {
@@ -587,6 +594,7 @@ body.nav-open .hamburger::after {
     .main-nav a {
         font-size: 1.25rem;
     }
+
 }
 @media (max-width: 768px) {
     .service-list { grid-template-columns: 1fr; }
