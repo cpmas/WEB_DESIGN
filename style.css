@@ -533,6 +533,7 @@ body.nav-open .hamburger::after {
     }
     .feature-item {
         justify-content: center; /* Center items within the grid cell */
+        font-size: 0.8rem;
     }
 
     .about-showcase-grid { grid-template-columns: 1fr; gap: 60px; }
