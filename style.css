@@ -15,6 +15,10 @@
     --header-height-scrolled: 74px;
 }
 
+.section-padding {
+    padding: 140px 0;
+}
+
 body {
     font-family: var(--font-primary);
     background-color: var(--color-background-dark);
@@ -28,7 +32,7 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -191,7 +195,6 @@ a { color: var(--color-text-primary); text-decoration: none; }
 
 /* --- About Section --- */
 .about { 
-    padding: 140px 0;
     position: relative;
 }
 .about-showcase-grid {
@@ -287,7 +290,6 @@ pre, code {
 
 /* --- Services Section --- */
 .services {
-    padding: 140px 0;
     position: relative;
 }
 
@@ -350,7 +352,6 @@ pre, code {
 
 /* --- Process Section --- */
 .process { 
-    padding: 140px 0;
     position: relative;
 }
 .process-header { 
@@ -382,7 +383,7 @@ pre, code {
 
 /* --- CTA Section --- */
 .cta { 
-    padding: 140px 0;
+    padding: 120px 0;
     text-align: center;
     position: relative;
 }
@@ -487,6 +488,10 @@ body.nav-open .hamburger::after {
         gap: 0;
         align-items: stretch;
     }
+
+    .section-padding {
+    padding: 80px 0;
+}
     
     /* New wrapper for mobile above-the-fold content */
     .hero-content-top {
