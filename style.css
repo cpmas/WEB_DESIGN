@@ -503,7 +503,8 @@ body.nav-open .hamburger::after {
         flex-grow: 1;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-end; /* Push content to bottom of its container */
+        padding-bottom: 2rem; /* Add some space above the button */
     }
     .hero-text h1 { font-size: 3.5rem; }
     .hero-text p.tagline { margin-left: auto; margin-right: auto; }
@@ -511,7 +512,8 @@ body.nav-open .hamburger::after {
     /* Make features section part of the initial view */
     .features-section {
         position: static;
-        padding: 60px 0;
+        padding: 0 0 2rem 0; /* Adjust padding to bring it up */
+        flex-shrink: 0; /* Prevent this section from shrinking */
     }
     
     .code-snippet-container { 
@@ -526,14 +528,13 @@ body.nav-open .hamburger::after {
     .features-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 10px 20px;
+        gap: 30px 20px;
         justify-content: center;
         max-width: 500px;
         margin: 0 auto;
     }
     .feature-item {
         justify-content: center; /* Center items within the grid cell */
-        font-size: 0.8rem;
     }
 
     .about-showcase-grid { grid-template-columns: 1fr; gap: 60px; }
@@ -563,7 +564,7 @@ body.nav-open .hamburger::after {
         padding-top: 5rem;
     }
     
-    .main-nav.nav-open {
+    .main-nav.open {
         transform: translateX(0);
     }
     
@@ -588,4 +589,3 @@ body.nav-open .hamburger::after {
     .process-step-item { text-align: center; align-items: center; }
     .step-number { margin-left: auto; margin-right: auto; }
 }
-
