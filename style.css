@@ -210,6 +210,7 @@ a { color: var(--color-text-primary); text-decoration: none; }
 .about .section-header h2 {
     font-size: 3.5rem;
     line-height: 1.2;
+    text-align: center;
 }
 .about-showcase-visual .code-snippet-container {
     transform: none;
