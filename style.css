@@ -493,18 +493,18 @@ body.nav-open .hamburger::after {
         min-height: calc(100vh - var(--header-height-scrolled));
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: center; /* This now works correctly */
         text-align: center;
         padding-top: var(--header-height-scrolled);
         box-sizing: border-box;
     }
 
     .hero-text {
-        flex-grow: 1;
+        /* flex-grow: 1; -> REMOVED */
         display: flex;
         flex-direction: column;
-        justify-content: flex-end; /* Push content to bottom of its container */
-        padding-bottom: 2rem; /* Add some space above the button */
+        justify-content: center; /* Changed from flex-end */
+        padding-bottom: 2rem; /* Kept for spacing */
     }
     .hero-text h1 { font-size: 3.5rem; }
     .hero-text p.tagline { margin-left: auto; margin-right: auto; }
