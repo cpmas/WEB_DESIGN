@@ -520,9 +520,7 @@ body.nav-open .hamburger::after {
         transform: perspective(0) rotateY(0) rotateX(0); 
     }
 
-    .hero-visual {
-        padding: 80px 0;
-    }
+    
 
     /* 2x2 grid for features on mobile */
     .features-container {
