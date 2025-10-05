@@ -528,13 +528,14 @@ body.nav-open .hamburger::after {
     .features-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 30px 20px;
+        gap: 10px 20px;
         justify-content: center;
         max-width: 500px;
         margin: 0 auto;
     }
     .feature-item {
         justify-content: center; /* Center items within the grid cell */
+        font-size: 0.8rem;
     }
 
     .about-showcase-grid { grid-template-columns: 1fr; gap: 60px; }
