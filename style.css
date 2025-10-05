@@ -474,12 +474,41 @@ body.nav-open .hamburger::after {
 /* --- Responsive Styles --- */
 @media (max-width: 992px) {
     .hero-wrapper, .hero { height: auto; min-height: 100vh; }
-    .hero { padding-top: 120px; align-items: flex-start;}
+    /* .hero { padding-top: 120px; align-items: flex-start;} /* This is now handled by .hero-text */
     .hero .container { grid-template-columns: 1fr; gap: 40px; text-align: center; }
     .hero-text h1 { font-size: 3.5rem; }
     .hero-text p.tagline { margin-left: auto; margin-right: auto; }
-    .features-section { position: static; padding: 20px 0 60px 0;}
+    
+    .features-section { position: static; padding: 80px 0 60px 0;}
+    
     .code-snippet-container { transform: perspective(0) rotateY(0) rotateX(0); }
+
+    /* --- NEW MOBILE HERO LAYOUT --- */
+    .hero-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Flatten the hero section for layout reordering */
+    .hero, .hero .container {
+        display: contents;
+    }
+
+    /* Apply order and spacing to the hero elements */
+    .hero-text {
+        order: 1;
+        padding-top: 120px;
+    }
+
+    .features-section {
+        order: 2;
+    }
+
+    .hero-visual {
+        order: 3;
+        padding-top: 80px; 
+    }
+    
     .about-showcase-grid { grid-template-columns: 1fr; gap: 60px; }
     .process-steps-container { grid-template-columns: 1fr 1fr; gap: 60px 30px; }
     .process-steps-container::before { display: none; }
