@@ -77,8 +77,15 @@ a { color: var(--color-text-primary); text-decoration: none; }
 .main-header .container { display: flex; justify-content: space-between; align-items: center; }
 .logo { font-size: 24px; font-weight: 800; transition: font-size 0.3s ease; }
 
-.main-nav ul { margin: 0; padding: 0; list-style: none; display: flex; gap: 40px; }
-.main-nav a { font-weight: 700; position: relative; padding-bottom: 5px; }
+.main-nav ul { margin: 0; padding: 0; list-style: none; display: flex; align-items: center; gap: 40px; }
+.main-nav a {
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
 .main-nav a::after {
     content: '';
     position: absolute;
@@ -93,6 +100,98 @@ a { color: var(--color-text-primary); text-decoration: none; }
 }
 .main-nav a:hover::after { transform: scaleX(1); }
 
+/* --- Nav Dropdown Styles (Desktop Only) --- */
+.main-nav .dropdown { position: relative; }
+.dropdown-toggle { display: flex; align-items: center; gap: 6px; }
+.dropdown-chevron { transition: transform 0.3s ease; }
+
+.dropdown-menu {
+    position: absolute;
+    top: 130%;
+    left: 50%;
+    background-color: var(--color-background-card);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 10px 0;
+    list-style: none;
+    margin-top: 25px; 
+    min-width: 180px;
+    z-index: 1001;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.main-nav .dropdown-menu {
+    gap: 0 !important;
+}
+
+.dropdown-menu li a {
+    padding: 10px 20px;
+    display: block;
+    white-space: nowrap;
+    font-weight: 500;
+}
+
+
+
+.dropdown-menu li a::after { display: none; }
+.dropdown-menu li a:hover {
+    color: var(--color-accent-start);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+.dropdown-menu li a:hover::after { transform: scaleX(0); }
+
+/* --- Contact Button Style --- */
+
+/* Base style for the button */
+.cta-button {
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    background: linear-gradient(90deg, var(--color-accent-start), var(--color-accent-end));
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* This centers the text horizontally inside the button */
+    justify-content: center; 
+}
+
+/* Remove the default underline hover effect */
+.cta-button::after {
+    display: none;
+}
+
+/* Add a hover effect for the button */
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(56, 189, 248, 0.2);
+}
+
+.main-nav a.cta-button {
+    padding-bottom: 10px; /* Balances the top padding for perfect alignment */
+}
+
+/* Adjustments for the mobile menu layout */
+@media (max-width: 992px) {
+    .main-nav ul > li a.cta-button {
+        display: inline-block; /* Ensures it behaves like a button in the mobile nav */
+        padding: 12px 28px;
+    }
+}
+
+/* --- Responsive Nav Visibility --- */
+.mobile-only {
+    display: none;
+}
 
 /* --- Hero Wrapper --- */
 .hero-wrapper {
@@ -428,56 +527,71 @@ pre, code {
 }
 
 .hamburger {
-    display: block;
-    position: relative;
-    width: 1.75em;
-    height: 2px;
-    background: var(--color-text-primary);
-    transition: transform 250ms ease-in-out;
+  display: block;
+  position: relative;
+  width: 1.75em;
+  height: 2px;
+  background: var(--color-text-primary);
+  transition: background-color 0.25s ease-in-out;
 }
 
 .hamburger::before,
 .hamburger::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: var(--color-text-primary);
-    transition: transform 250ms ease-in-out, opacity 250ms linear;
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--color-text-primary);
+  transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out;
 }
 
-.hamburger::before {
-    top: -7px;
+.hamburger::before { top: -7px; }
+.hamburger::after { bottom: -7px; }
+
+/* Cross state */
+body.nav-open .hamburger {
+  background: transparent;
 }
 
-.hamburger::after {
-    bottom: -7px;
+body.nav-open .hamburger::before {
+  transform: translateY(7px) rotate(45deg);
 }
 
-/* --- Body state when nav is open --- */
-body.nav-open {
-    overflow: hidden;
+body.nav-open .hamburger::after {
+  transform: translateY(-7px) rotate(-45deg);
 }
+
 
 /* --- Style the X for the toggle --- */
 .main-header.scrolled .nav-toggle {
     top: 50%;
 }
+
+/* FIXED: Replaced "spinning" burger with a clean cross animation */
 body.nav-open .hamburger {
-    transform: rotate(0.625turn);
+    background: transparent; /* middle bar disappears */
 }
 
 body.nav-open .hamburger::before {
-    transform: rotate(90deg) translateX(-7px);
+    transform: translateY(7px) rotate(45deg);
 }
 
 body.nav-open .hamburger::after {
-    opacity: 0;
+    transform: translateY(-7px) rotate(-45deg);
+    opacity: 1; 
 }
 
 /* --- Responsive Styles --- */
 @media (max-width: 992px) {
+    /* --- HIDE DESKTOP NAV ITEMS, SHOW MOBILE --- */
+    .desktop-only {
+        display: none;
+    }
+    .mobile-only {
+        display: list-item;
+    }
+
     .hero-wrapper { 
         height: auto;
     }
@@ -533,8 +647,6 @@ body.nav-open .hamburger::after {
         transform: perspective(0) rotateY(0) rotateX(0); 
     }
 
-    
-
     /* 2x2 grid for features on mobile */
     .features-container {
         display: grid;
@@ -566,19 +678,26 @@ body.nav-open .hamburger::after {
         display: block;
     }
     
-    .main-nav {
-        position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        width: min(75vw, 400px);
-        background: rgba(16, 16, 16, 0.9);
-        backdrop-filter: blur(15px);
-        transform: translateX(100%);
-        transition: transform 350ms ease-out;
-        z-index: 1000;
-        padding-top: 5rem;
-    }
+.main-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(75vw, 400px);
+
+  /* Blur + translucent bg */
+  background: rgba(16, 16, 16, 0.55);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+
+  transform: translateX(100%);
+  transition: transform 350ms ease-out;
+  z-index: 1500;              /* above content, below header button */
+  padding-top: 5rem;
+
+  /* Helps rendering on some devices */
+  will-change: transform, backdrop-filter;
+}
     
     .main-nav.open {
         transform: translateX(0);
@@ -589,13 +708,23 @@ body.nav-open .hamburger::after {
         justify-content: flex-start;
         align-items: center;
         height: 100%;
-        gap: 2.5rem;
+        gap: 2rem;
+        
+    }
+    
+    .main-nav ul > li {
+        width: 100%;
+        text-align: center;
+        align-items: center;
     }
 
     .main-nav a {
         font-size: 1.25rem;
+        display: inline-block;         /* override desktop 'display:flex' */
+        text-align: center;
+        margin: 0 auto;                /* center the inline-block in its li */
+        padding: 0.5rem 0;
     }
-
 }
 @media (max-width: 768px) {
     .service-list { grid-template-columns: 1fr; }
@@ -605,4 +734,15 @@ body.nav-open .hamburger::after {
     .process-steps-container { grid-template-columns: 1fr; }
     .process-step-item { text-align: center; align-items: center; }
     .step-number { margin-left: auto; margin-right: auto; }
+}
+
+
+
+/* --- Keep the close (X) above the slide-out nav --- */
+.nav-toggle { z-index: 3000; }                 /* higher than .main-nav */
+
+body.nav-open .nav-toggle {
+  position: fixed;                              /* float it above everything */
+  top: 50px;
+  right: 16px;
 }

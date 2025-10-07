@@ -11,13 +11,32 @@
 
     <header class="main-header" id="main-header">
         <div class="container">
-            <a href="#" class="logo">Orbit Web Studio</a>
+            <a href="index.html" class="logo">Orbit Web Studio</a>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#process">Process</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li class="desktop-only"><a href="index.html">Home</a></li>
+                    <li class="dropdown desktop-only">
+                        <a href="#" class="dropdown-toggle">
+                            Services
+                            <svg class="dropdown-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="20" height="20">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                        <ul class="dropdown-menu" id="drop-menu-no-space">
+                            <li><a href="./web-design/index.html">Web Design</a></li>
+                            <li><a href="./software/index.html">Custom Software</a></li>
+                            <li><a href="./seo-ads/index.html">SEO/Ads</a></li>
+                        </ul>
+                    </li>
+                    <li class="desktop-only"><a href="./about/index.html">About</a></li>
+                    <li class="desktop-only"><a href="./contact/index.html" class="cta-button">Contact</a></li>
+
+                    <li class="mobile-only"><a href="index.html">Home</a></li>
+                    <li class="mobile-only"><a href="./web-design/index.html">Web Design</a></li>
+                    <li class="mobile-only"><a href="./software/index.html">Custom Software</a></li>
+                    <li class="mobile-only"><a href="./seo-ads/index.html">SEO/Ads</a></li>
+                    <li class="mobile-only"><a href="./about/index.html">About</a></li>
+                    <li class="mobile-only"><a href="./contact/index.html" class="cta-button">Contact</a></li>
                 </ul>
             </nav>
             <button class="nav-toggle" aria-label="toggle navigation">
@@ -30,7 +49,6 @@
         <div class="hero-wrapper">
             <section class="hero">
                 <div class="container">
-                    <!-- Wrapper for above-the-fold mobile content -->
                     <div class="hero-content-top">
                         <div class="hero-text">
                             <h1 class="reveal">Websites that <br><span class="gradient-text">Just Work.</span></h1>
@@ -89,7 +107,7 @@
                     <p>We build websites and tools that solve real business problems, designed around your specific goals. Our work combines clean, professional design with smart technology to create a fast, effective online presence that helps you find more customers.</p>
                 </div>
                  <div class="service-list">
-                    <a href="#core-web-design" class="service-card-link reveal">
+                    <a href="#core-web-design" id="core-web-design" class="service-card-link reveal">
                         <div class="service-item">
                             <div class="service-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -105,7 +123,7 @@
                             </ul>
                         </div>
                     </a>
-                    <a href="#local-seo" class="service-card-link reveal" data-delay="100">
+                    <a href="#local-seo" id="local-seo" class="service-card-link reveal" data-delay="100">
                         <div class="service-item">
                             <div class="service-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -121,7 +139,7 @@
                             </ul>
                         </div>
                     </a>
-                    <a href="#smart-ai-tools" class="service-card-link reveal" data-delay="200">
+                    <a href="#smart-ai-tools" id="smart-ai-tools" class="service-card-link reveal" data-delay="200">
                         <div class="service-item">
                             <div class="service-icon">
                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -275,60 +293,15 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2025 Orbit Web Studio. All rights reserved.</p>
+                <p>© <span id="year"></span> Orbit Web Studio. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // --- High-Performance Scroll Animation ---
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, {
-            threshold: 0.2
-        });
-
-        const elementsToReveal = document.querySelectorAll('.reveal');
-        elementsToReveal.forEach((el) => {
-            if (el.dataset.delay) {
-                el.style.transitionDelay = el.dataset.delay + 'ms';
-            }
-            observer.observe(el);
-        });
-
-        // --- Header Scroll Effect ---
-        window.addEventListener('scroll', function() {
-            const header = document.getElementById('main-header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // --- Mobile Navigation ---
-        const navToggle = document.querySelector('.nav-toggle');
-        const mainNav = document.querySelector('.main-nav');
-        const navLinks = document.querySelectorAll('.main-nav a');
-
-        navToggle.addEventListener('click', () => {
-            document.body.classList.toggle('nav-open');
-            mainNav.classList.toggle('nav-open');
-        });
-
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                if (document.body.classList.contains('nav-open')) {
-                    document.body.classList.remove('nav-open');
-                    mainNav.classList.remove('nav-open');
-                }
-            });
-        });
+      document.getElementById("year").textContent = new Date().getFullYear();
     </script>
+    <script src="./main.js" defer></script>
+    
 </body>
 </html>
-
