@@ -46,6 +46,99 @@
             line-height: 1.6;
             margin: 0;
         }
+
+        /* --- New styles for the intro heading --- */
+        #intro .process-header {
+            padding-top: 20px;
+            text-align: center;
+        }
+        #intro .process-header h1 {
+            font-size: 4.9rem;
+            line-height: 1.15;
+            font-weight: 800;
+            margin-bottom: 25px;
+        }
+        #intro .process-header p {
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            font-size: 1.2rem;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, var(--color-accent-start), var(--color-accent-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+
+        /* --- Styles for new buttons --- */
+        .intro-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .btn-secondary {
+            display: inline-block;
+            padding: 18px 36px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--color-text-primary);
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+            background-color: var(--color-background-card);
+        }
+        .btn-secondary:hover {
+            background-color: rgba(24, 24, 24, 0.7);
+            border-color: var(--color-accent-start);
+        }
+        
+        /* --- Spacing and Layout Fixes --- */
+        #benefits .section-header {
+            text-align: center;
+        }
+        #benefits .section-header h2 {
+            margin-bottom: 20px;
+        }
+        #benefits .section-header p {
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* --- Responsive Adjustments --- */
+        @media (max-width: 992px) {
+            #intro .process-header h1 {
+                font-size: 3.5rem;
+            }
+        }
+        @media (max-width: 768px) {
+            .intro-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            .intro-buttons .btn-primary-gradient,
+            .intro-buttons .btn-secondary {
+                width: 80%;
+                max-width: 300px;
+                text-align: center;
+            }
+            
+            /* Spacing fix for services/packages header on mobile */
+            #packages .section-header {
+                display: block;
+                text-align: center;
+            }
+            #packages .section-header h2 {
+                margin-bottom: 15px;
+            }
+            #packages .section-header p {
+              text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -53,25 +146,15 @@
     <div id="header-placeholder"></div>
 
     <main>
-        <div class="hero-wrapper">
-            <section class="hero">
-                <div class="container">
-                    <div class="hero-content-top">
-                        <div class="hero-text">
-                            <h1 class="reveal">Beyond the Website: <br><span class="gradient-text">Custom Digital Tools.</span></h1>
-                            <p class="tagline reveal" data-delay="100">We design and build branded web apps, AI-powered automations, and custom integrations to streamline your operations and create unique customer experiences.</p>
-                            <a href="#contact" class="btn-primary-gradient reveal" data-delay="200">Discuss Your Project</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <section id="intro" class="section-padding">
+        <section id="intro" class="section-padding-service">
             <div class="container">
                 <div class="process-header reveal">
-                    <h2>Your Business Logic, Built for Growth.</h2>
-                    <p>Off-the-shelf software can't always solve your unique challenges. We create custom solutions that are perfectly tailored to your workflow, giving you the tools you need to operate efficiently and outperform the competition.</p>
+                    <h1>Beyond the Website: <br><span class="gradient-text">Custom Digital Tools.</span></h1>
+                    <p>We design and build branded web apps, AI-powered automations, and custom integrations to streamline your operations and create unique customer experiences.</p>
+                    <div class="intro-buttons">
+                        <a href="#contact" class="btn-primary-gradient">Discuss Your Project</a>
+                        <a href="#packages" class="btn-secondary">View Services</a>
+                    </div>
                 </div>
 
                 <div class="intro-features reveal">
@@ -105,10 +188,10 @@
                 </div>
             </section>
 
-        <section id="benefits" class="about section-padding" style="padding-top: 0;">
+        <section id="benefits" class="about section-padding" >
             <div class="container">
                 <div class="section-header reveal">
-                    <h2>Your Competitive Edge, Coded.</h2>
+                    <h2>Gain Your Unfair Advantage.</h2>
                     <p>A custom application isn't just software—it's a strategic asset. It allows you to offer services, operate, and engage with customers in ways your competitors simply can't replicate with off-the-shelf tools.</p>
                 </div>
                 <div class="about-showcase-grid">
@@ -172,7 +255,7 @@
         <section id="packages" class="services section-padding">
             <div class="container">
                 <div class="section-header reveal">
-                    <h2>Custom Development Services</h2>
+                    <h2><span class="gradient-text">Custom Development Services</span></h2>
                     <p>From simple scripts to complex platforms, our development process is transparent and focused on delivering a tangible return on your investment. All projects are custom-quoted after an initial discovery call.</p>
                 </div>
                  <div class="service-list">
@@ -188,20 +271,6 @@
                             <li><span></span>Project Management Dashboards</li>
                             <li><span></span>Internal Business Software</li>
                             <li><span></span>Client Onboarding Platforms</li>
-                        </ul>
-                    </div>
-                    <div class="service-item reveal" data-delay="100">
-                        <div class="service-icon">
-                           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V8.25a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 8.25v7.5a2.25 2.25 0 002.25 2.25z" /></svg>
-                        </div>
-                        <h3>AI & Automation</h3>
-                        <p>Integrate intelligent automation into your website and workflows to save time, reduce costs, and improve customer interactions. We'll build smart systems that handle repetitive tasks so you can focus on growth.</p>
-                         <ul class="service-benefits">
-                            <li><span></span>AI Chatbots for Bookings/FAQs</li>
-                            <li><span></span>Smart Quote & Invoice Follow-ups</li>
-                            <li><span></span>Automated Review Responses</li>
-                            <li><span></span>Custom Industry Workflows</li>
-                            <li><span></span>Streamlined Internal Data Tasks</li>
                         </ul>
                     </div>
                     <div class="service-item reveal" data-delay="200">
@@ -220,12 +289,27 @@
                             <li><span></span>Automated Lead Delivery to CRM</li>
                         </ul>
                     </div>
+                    <div class="service-item reveal" data-delay="100">
+                        <div class="service-icon">
+                           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V8.25a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 8.25v7.5a2.25 2.25 0 002.25 2.25z" /></svg>
+                        </div>
+                        <h3>AI & Automation</h3>
+                        <p>Integrate intelligent automation into your website and workflows to save time, reduce costs, and improve customer interactions. We'll build smart systems that handle repetitive tasks so you can focus on growth.</p>
+                         <ul class="service-benefits">
+                            <li><span></span>AI Chatbots for Bookings/FAQs</li>
+                            <li><span></span>Smart Quote & Invoice Follow-ups</li>
+                            <li><span></span>Automated Review Responses</li>
+                            <li><span></span>Custom Industry Workflows</li>
+                            <li><span></span>Streamlined Internal Data Tasks</li>
+                        </ul>
+                    </div>
+                    
                 </div>
             </div>
         </section>
         
         <section class="cta">
-            <div class="container reveal section-padding">
+            <div class="container reveal">
                 <h2>Ready to build a tool that gives you an edge?</h2>
                 <p>Let's discuss your unique business challenge and explore how a custom software solution can help you work smarter, not harder.</p>
                 <a href="#contact" class="btn-primary-gradient">Let's Chat</a>

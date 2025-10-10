@@ -7,21 +7,24 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap">
     <style>
-        .page-header {
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 160px 0 80px 0;
+        /* --- NEW HERO SECTION STYLES --- */
+        .hero-section {
+            padding: 180px 0 100px 0;
         }
-        .page-header h1 {
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        .hero-text h1 {
             font-size: 4.5rem;
-            line-height: 1.1;
-            margin-bottom: 20px;
+            line-height: 1.15;
+            margin-bottom: 25px;
         }
-        .page-header p {
+        .hero-text p {
             font-size: 1.25rem;
-            max-width: 750px;
-            margin: 0 auto;
+            max-width: 550px;
         }
         
         .service-detail-section {
@@ -30,108 +33,185 @@
 
         .service-grid {
             display: grid;
-            grid-template-columns: 1fr 1.5fr;
+            grid-template-columns: 1.5fr 1fr;
             gap: 80px;
             align-items: center;
         }
         
-        .service-grid.reverse {
-             grid-template-columns: 1.5fr 1fr;
+        .service-grid.ads-layout {
+             grid-template-columns: 1fr 1.5fr;
         }
         
-        .service-grid.reverse .service-text {
-            order: -1;
-        }
-        
-        .service-visual {
-            text-align: center; /* Center the button below the card */
-        }
-
-        .service-text h2 {
+        .service-description-block h2 {
             font-size: 2.8rem;
             margin-bottom: 20px;
+            line-height: 1.2;
         }
         
-        .service-text .service-subtitle {
-            font-size: 1.2rem;
-            color: var(--color-accent-start);
-            font-weight: 700;
-            margin-bottom: 10px;
+        .points-header {
+            text-align: center;
+            margin: 100px 0 60px 0;
+        }
+        .points-header h3 {
+            font-size: 2.5rem;
         }
 
-        .feature-list-detailed {
-            margin-top: 30px;
+        .points-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        
+        .point-item {
+            background-color: var(--color-background-card);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: 30px;
             display: flex;
             flex-direction: column;
-            gap: 25px;
         }
-        .feature-item-grid {
-            display: flex;
-            gap: 20px;
-            align-items: flex-start;
-        }
-        .feature-item-grid .icon {
-            flex-shrink: 0;
+        
+        .point-item .icon {
             color: var(--color-accent-start);
+            margin-bottom: 20px;
         }
-        .feature-item-grid .icon svg {
-            width: 28px;
-            height: 28px;
+        .point-item .icon svg {
+            width: 32px;
+            height: 32px;
         }
-        .feature-item-grid h3 {
-            font-size: 1.25rem;
-            margin-bottom: 5px;
+        
+        .point-item h4 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .section-cta {
+            text-align: center;
+            margin: 100px auto 0 auto;
+            max-width: 650px;
+        }
+        .section-cta h3 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        .section-cta p {
+             margin-bottom: 30px;
         }
 
         .visual-placeholder {
             background-color: var(--color-background-card);
             border: 1px solid var(--color-border);
             border-radius: 12px;
-            padding: 40px;
+            padding: 0;
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 0;
             height: 100%;
-            justify-content: center;
+            justify-content: space-between;
+            overflow: hidden;
         }
 
-        /* Process Steps for Ads */
-        .process-step {
-            position: relative;
-            padding-left: 45px;
-            border-left: 2px solid var(--color-border);
+        /* --- SERP ILLUSTRATION --- */
+        .serp-wrapper {
+            padding: 30px;
         }
-        .process-step:last-child {
-            border-left: 2px solid transparent;
-        }
-        .process-step::before {
-            content: attr(data-step);
-            position: absolute;
-            left: -18px;
-            top: -5px;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
+        .serp-search-bar {
             background-color: var(--color-background-dark);
-            border: 2px solid var(--color-accent-start);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-size: 0.9rem;
+            text-align: left;
+            border: 1px solid var(--color-border);
+            margin-bottom: 15px;
+        }
+        .serp-result {
+            background-color: var(--color-background-dark);
+            border-radius: 8px;
+            padding: 15px;
+            text-align: left;
+            border: 1px solid var(--color-border);
+            opacity: 0.5;
+            margin-top: 10px;
+        }
+        .serp-result.highlighted {
+            border-color: var(--color-accent-start);
+            transform: scale(1.05);
+            opacity: 1;
+            box-shadow: 0 10px 20px rgba(56, 189, 248, 0.1);
+        }
+        .serp-result .url {
+            font-size: 0.8rem;
+            color: var(--color-text-secondary);
+        }
+        .serp-result .title {
+            font-size: 1.1rem;
             font-weight: 700;
-            color: var(--color-text-primary);
+            color: var(--color-accent-start);
+            margin: 5px 0;
+        }
+        .serp-result .description {
+            font-size: 0.9rem;
+            line-height: 1.5;
         }
         
-        .cta-below-card {
-            margin-top: 30px;
-            display: inline-block;
+        .service-content-header {
+            margin-bottom: 80px;
+            text-align: center;
+        }
+        .service-content-header .service-subtitle {
+            font-size: 1.2rem;
+            color: var(--color-accent-start);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .service-content-header h2 {
+            font-size: 2.8rem;
         }
 
+        .ads-text-block > h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .ads-text-block > .service-subtitle {
+            font-size: 1.2rem;
+            color: var(--color-accent-start);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        /* --- RESPONSIVE STYLES --- */
         @media (max-width: 992px) {
-             .page-header h1 { font-size: 3.5rem; }
-             .service-grid, .service-grid.reverse {
-                 grid-template-columns: 1fr;
-                 gap: 60px;
+             .section-padding {
+                 padding: 80px 0;
              }
+             .hero-grid, .service-grid, .service-grid.ads-layout {
+                 grid-template-columns: 1fr;
+                 gap: 50px;
+             }
+             .hero-text h1 { font-size: 3.5rem; }
+             .hero-text p { margin-left: auto; margin-right: auto; }
+             .service-grid .service-visual {
+                 order: -1;
+             }
+             .service-description-block,
+             .ads-text-block,
+             .point-item {
+                text-align: center;
+             }
+             .point-item .icon {
+                 margin-left: auto;
+                 margin-right: auto;
+             }
+             .points-header, .section-cta {
+                 margin-top: 80px;
+             }
+        }
+        
+        @media (max-width: 768px) {
+            .points-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -140,81 +220,43 @@
     <div id="header-placeholder"></div>
 
     <main>
-        <section class="page-header">
-             <div class="container">
-                <h1 class="reveal">Get Found. <br><span class="gradient-text">Stay in Control.</span></h1>
-                <p class="reveal" data-delay="100">We provide a powerful, one-off setup for SEO and Google Ads, then give you the knowledge to manage your own growth—no expensive monthly retainers required.</p>
-            </div>
-        </section>
-
-        <section class="service-detail-section section-padding">
+        <section class="hero-section section-padding">
             <div class="container">
-                <div class="service-grid">
-                    <div class="service-text reveal">
-                        <p class="service-subtitle">FOUNDATIONAL SEO</p>
-                        <h2>Built-In, Not Bolted-On.</h2>
-                        <p>A successful website is one that search engines can easily find, understand, and trust. Our Foundational SEO setup is included with every web design project, because visibility shouldn't be an optional extra. We don't just optimize your site; we build it on a bedrock of SEO best practices from the very first line of code.</p>
-                        <div class="feature-list-detailed">
-                            <div class="feature-item-grid">
-                                <div class="icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" /></svg>
-                                </div>
-                                <div>
-                                    <h3>The Technical Foundation</h3>
-                                    <p>We ensure your site's code is clean, structured, and fast, creating a perfect canvas for search engines to crawl and index efficiently.</p>
-                                </div>
-                            </div>
-                            <div class="feature-item-grid">
-                                <div class="icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 100 15 7.5 7.5 0 000-15z" /><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.2-5.2" /></svg>
-                                </div>
-                                <div>
-                                    <h3>Content & Keyword Strategy</h3>
-                                    <p>We perform in-depth research to align your site's content with what your ideal customers are searching for, establishing your relevance and authority.</p>
-                                </div>
-                            </div>
-                            <div class="feature-item-grid">
-                                <div class="icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" /></svg>
-                                </div>
-                                <div>
-                                    <h3>Local Presence Optimisation</h3>
-                                    <p>For local businesses, we optimize your Google Business Profile and on-site signals to ensure you appear prominently in local search results and maps.</p>
-                                </div>
-                            </div>
-                        </div>
+                <div class="hero-grid">
+                    <div class="hero-text reveal">
+                        <h1>Get Found. <br><span class="gradient-text">Stay in Control.</span></h1>
+                        <p>We provide a powerful, one-off setup for SEO and Google Ads, then give you the knowledge to manage your own growth—no expensive monthly retainers required.</p>
                     </div>
-                    <div class="service-visual reveal" data-delay="100">
-                        <div class="visual-placeholder">
+                    <div class="hero-visual reveal" data-delay="100">
+                        <div class="visual-placeholder" style="padding: 40px; justify-content: center;">
                            <div class="feature-item-detailed">
                                 <div class="feature-icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                                 </div>
                                 <div class="feature-text">
-                                    <h3>What's Included?</h3>
-                                    <p>Our standard SEO setup includes a full technical audit, keyword research, on-page optimisation, schema markup, Google Search Console & Analytics integration, and a future growth plan.</p>
+                                    <h3>Expert Foundation</h3>
+                                    <p>Get a comprehensive SEO and Google Ads setup built on years of expertise and best practices.</p>
                                 </div>
                            </div>
                            <div class="feature-item-detailed">
                                 <div class="feature-icon">
-                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" /></svg>
+                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" /></svg>
                                 </div>
                                 <div class="feature-text">
-                                    <h3>The Long-Term Advantage</h3>
-                                    <p>By building SEO into the core of your website, we create a sustainable asset that gains authority over time, attracting organic traffic long after the initial launch.</p>
+                                    <h3>Full Ownership, No Retainers</h3>
+                                    <p>We build it, we teach you, and you own it. Your budget goes to ads, not endless management fees.</p>
                                 </div>
                            </div>
                            <div class="feature-item-detailed">
                                 <div class="feature-icon">
-                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21V3M4.284 4.284a9.004 9.004 0 0111.432 0M19.716 4.284a9.004 9.004 0 010 11.432M4.284 15.716a9.004 9.004 0 010-11.432" /></svg>
+                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0l-2.072-1.036A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41l-2.072 1.036m-12.156 0a48.636 48.636 0 01-2.072-1.036l2.072 1.036a48.627 48.627 0 00-2.298 4.954A48.636 48.636 0 0012 20.904a48.636 48.636 0 00-8.232-4.41 48.627 48.627 0 00-2.298-4.954z" /></svg>
                                 </div>
                                 <div class="feature-text">
-                                    <h3>No Expensive Plugins</h3>
-                                    <p>Our custom-coded approach handles technical SEO natively, eliminating the need for costly, slow, and often vulnerable third-party SEO plugins that require constant updates.</p>
+                                    <h3>1-on-1 Empowerment</h3>
+                                    <p>Receive personalised training to confidently manage and optimise your campaigns for long-term growth.</p>
                                 </div>
                            </div>
                         </div>
-                        <a href="../web-design/index.html" class="btn-primary-gradient cta-below-card">Learn About Web Design</a>
                     </div>
                 </div>
             </div>
@@ -222,16 +264,79 @@
 
         <section class="service-detail-section section-padding">
             <div class="container">
-                <div class="service-grid reverse">
-                    <div class="service-text reveal">
-                        <p class="service-subtitle">GOOGLE ADS LAUNCHPAD</p>
-                        <h2>Your Campaign, Your Control.</h2>
-                        <p>For small businesses, every dollar in the advertising budget counts. Paying hefty monthly management fees can cripple a campaign's effectiveness before it even has a chance to deliver results. Our "Launchpad" service is the solution: we do the expert-level, heavy lifting upfront to build a high-performance campaign, then we transfer the most valuable asset to you: knowledge.</p>
-                        <p>This empowerment model means your budget is spent on ads, not retainers. We meticulously build and launch your Google Ads campaign based on deep research and best practices, and then provide comprehensive, 1-on-1 training so you can manage it yourself with confidence.</p>
-                        <a href="../contact/index.html" class="btn-primary-gradient" style="margin-top: 40px; display: inline-block;">Book a Consultation</a>
+                <div class="service-content-header reveal">
+                    <p class="service-subtitle">FOUNDATIONAL SEO</p>
+                    <h2>Built-In, Not Bolted-On.</h2>
+                </div>
+
+                <div class="service-grid">
+                    <div class="service-visual reveal">
+                        <div class="visual-placeholder serp-wrapper">
+                           <div class="serp-search-bar">best local plumber near me</div>
+                           <div class="serp-result highlighted">
+                               <div class="url">https://www.yourwebsite.com</div>
+                               <div class="title">Your Plumbing Co | 24/7 Emergency Services</div>
+                               <div class="description">Fast, reliable, and affordable plumbing for the Mornington Peninsula. Call today for a free quote!</div>
+                           </div>
+                           <div class="serp-result">
+                               <div class="url">https://www.competitor.com</div>
+                               <div class="title">Average Plumbing Services</div>
+                               <div class="description">We offer a range of plumbing services for the area...</div>
+                           </div>
+                           <div class="serp-result">
+                               <div class="url">https://www.another-competitor.com</div>
+                               <div class="title">A Plumber You Can Trust</div>
+                               <div class="description">With over 20 years of experience, we are the plumbers...</div>
+                           </div>
+                        </div>
                     </div>
+                    <div class="service-description-block reveal" data-delay="100">
+                        <p>A successful website is one that search engines can easily find, understand, and trust. Our philosophy is that visibility shouldn't be an optional extra or an afterthought. That's why we don't just optimize your site; we build it on a bedrock of SEO best practices from the very first line of code.</p>
+                        <p>This integrated approach ensures your digital presence is built on a solid foundation from day one, preventing the need for costly and ineffective fixes down the line. By considering search engine behaviour at every stage of design and development, we create a seamless experience for both users and crawlers, setting the stage for sustainable, long-term growth.</p>
+                    </div>
+                </div>
+
+                <div class="points-header reveal">
+                    <h3>What's Included?</h3>
+                </div>
+
+                <div class="points-grid">
+                    <div class="point-item reveal">
+                        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" /></svg></div>
+                        <h4>Technical Foundation</h4>
+                        <p>Performance is paramount. We build your site on a foundation of clean, efficient code that prioritizes core web vitals, mobile-friendliness, and optimal crawlability. This ensures search engines can effortlessly understand your content, giving you a technical edge over competitors.</p>
+                    </div>
+                    <div class="point-item reveal" data-delay="100">
+                        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 100 15 7.5 7.5 0 000-15z" /><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.2-5.2" /></svg></div>
+                        <h4>Content & Keyword Strategy</h4>
+                        <p>Through deep keyword and audience research, we identify what your customers are searching for and create high-quality content that directly answers their questions. This not only attracts highly qualified traffic but also establishes your brand as a trusted authority in your niche.</p>
+                    </div>
+                    <div class="point-item reveal" data-delay="200">
+                        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" /></svg></div>
+                        <h4>The Long-Term Advantage</h4>
+                        <p>A solid SEO foundation is a long-term investment. Unlike paid ads that stop when you stop paying, the authority and organic traffic you build continues to grow, delivering compounding returns and a sustainable source of leads for years to come.</p>
+                    </div>
+                    <div class="point-item reveal" data-delay="300">
+                        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div>
+                        <h4>No Expensive Plugins</h4>
+                        <p>Many platforms rely on slow, costly, and vulnerable plugins to handle SEO. Our custom-coded approach builds these critical functions in at the core, resulting in a faster, more secure website with less maintenance overhead and fewer security risks.</p>
+                    </div>
+                </div>
+
+                <div class="section-cta reveal">
+                    <h3>Ready for a Real Foundation?</h3>
+                    <p>Our foundational SEO is integral to our web design process. Let's build a website that's designed to be found from the ground up.</p>
+                    <a href="../web-design/index.html" class="btn-primary-gradient">Learn About Web Design</a>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="service-detail-section section-padding">
+            <div class="container">
+                <div class="service-grid ads-layout">
                     <div class="service-visual reveal" data-delay="100">
-                        <div class="visual-placeholder">
+                        <div class="visual-placeholder" style="padding: 40px; justify-content:center;">
                             <div class="process-step" data-step="01">
                                 <h3>Strategy & Research</h3>
                                 <p>We define your campaign goals, identify your target audience, and conduct deep keyword research to find the most profitable search terms for your business.</p>
@@ -246,12 +351,19 @@
                             </div>
                         </div>
                     </div>
+                    <div class="ads-text-block reveal">
+                        <p class="service-subtitle">GOOGLE ADS LAUNCHPAD</p>
+                        <h2>Your Campaign, Your Control.</h2>
+                        <p>For small businesses, every dollar in the advertising budget counts. Paying hefty monthly management fees can cripple a campaign's effectiveness before it even has a chance to deliver results. Our "Launchpad" service is the solution: we do the expert-level, heavy lifting upfront to build a high-performance campaign, then we transfer the most valuable asset to you: knowledge.</p>
+                        <p>This empowerment model means your budget is spent on ads, not retainers. We meticulously build and launch your Google Ads campaign based on deep research and best practices, and then provide comprehensive, 1-on-1 training so you can manage it yourself with confidence.</p>
+                        <a href="../contact/index.html" class="btn-primary-gradient" style="margin-top: 40px; display: inline-block;">Book a Consultation</a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="cta">
-            <div class="container reveal section-padding">
+        <section class="cta section-padding">
+            <div class="container reveal">
                 <h2>Ready to own your online visibility?</h2>
                 <p>Let's build a powerful foundation for growth that you can control. Get in touch to discuss how we can help your business thrive online.</p>
                 <a href="../contact/index.html" class="btn-primary-gradient">Let's Chat</a>

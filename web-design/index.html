@@ -45,6 +45,118 @@
             line-height: 1.6;
             margin: 0;
         }
+      
+      #wdp {
+        /* This was already correctly centered by the parent's text-align, so this rule wasn't needed */
+      }
+
+      /* --- New styles for the intro heading --- */
+      #intro .process-header {
+        padding-top: 20px; /* Add padding to push content down from the header */
+        text-align: center; /* Center align all content in the intro header */
+      }
+      #intro .process-header h1 {
+        font-size: 4.9rem;
+        line-height: 1.15;
+        font-weight: 800;
+        margin-bottom: 25px;
+      }
+      #intro .process-header p {
+        max-width: 800px; /* Constrain width of paragraph */
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      /* --- General rule for gradient text in any h1 --- */
+      h1 .gradient-text, h2 .gradient-text {
+        background: linear-gradient(90deg, var(--color-accent-start), var(--color-accent-end));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+      }
+
+      /* --- Styles for new buttons --- */
+      .intro-buttons {
+          display: flex;
+          justify-content: center;
+          gap: 20px; /* Space between buttons */
+          margin-top: 30px; /* Space below paragraph */
+      }
+      .btn-secondary {
+          padding: 15px 30px;
+          border: 1px solid var(--color-border);
+          border-radius: 8px;
+          text-decoration: none;
+          color: var(--color-text-primary);
+          font-weight: 700;
+          transition: background-color 0.3s ease, border-color 0.3s ease;
+          background-color: var(--color-background-card); /* Make button more obvious */
+      }
+      .btn-secondary:hover {
+          background-color: rgba(24, 24, 24, 0.7); /* Slightly different hover */
+          border-color: var(--color-accent-start);
+      }
+      
+      /* --- Spacing and Layout Fixes --- */
+
+      /* 1. Fixes for "Why a Custom Website Wins" section */
+      #benefits .section-header {
+        text-align: center;
+      }
+      #benefits .section-header h2 {
+          margin-bottom: 20px; /* Adds space between heading and paragraph */
+      }
+      #benefits .section-header p {
+          width: 100%; /* Overrides generic narrow width */
+          max-width: 800px; 
+          margin-left: auto;
+          margin-right: auto;
+      }
+
+      /* 2. Fixes for "Web Design Packages" section description */
+      #packages .section-header p {
+          width: 100%;
+          text-align: left;
+      }
+
+      /* --- Responsive Spacing Adjustments --- */
+      @media (max-width: 968px) {
+          .intro-buttons {
+              flex-direction: column; /* Stack buttons vertically */
+              align-items: center; /* Center buttons when stacked */
+              gap: 15px; /* Adjust gap for stacked buttons */
+          }
+          .intro-buttons .btn-primary-gradient,
+          .intro-buttons .btn-secondary {
+              width: 80%; /* Make buttons take up more width */
+              max-width: 300px; /* Max width for readability */
+              text-align: center; /* Center text within buttons */
+          }
+          #intro .process-header h1 {
+                font-size: 3.5rem;
+            }
+      }
+
+      @media (max-width: 768px) {
+        /* Increase bottom padding for the "Why Wins" header on mobile */
+        #benefits .section-header {
+            margin-bottom: 60px;
+        }
+
+        /* Reduce space between heading and description in Packages section on mobile */
+        #packages .section-header {
+            display: block;
+            text-align: center;
+        }
+        #packages .section-header h2 {
+            margin-bottom: 15px;
+        }
+         #packages .section-header p {
+          text-align: center;
+        }
+      }
+
     </style>
 </head>
 <body>
@@ -52,31 +164,21 @@
     <div id="header-placeholder"></div>
 
     <main>
-        <div class="hero-wrapper">
-            <section class="hero">
-                <div class="container">
-                    <div class="hero-content-top">
-                        <div class="hero-text">
-                            <h1 class="reveal">Strategic Web Design <br><span class="gradient-text">Built to Convert.</span></h1>
-                            <p class="tagline reveal" data-delay="100">We don't just build websites; we build the digital core of your business. Fast, secure, and SEO-ready from day one.</p>
-                            <a href="#contact" class="btn-primary-gradient reveal" data-delay="200">Get a Quote</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <section id="intro" class="section-padding">
+        <section id="intro" class="section-padding-service">
             <div class="container">
                 <div class="process-header reveal">
-                    <h2>Your Digital Foundation, Done Right.</h2>
-                    <p>A great website is your hardest-working employee—it should be winning you business 24/7. Our service is designed for professional small business owners who are ready to invest in a high-performance digital presence. We deliver clean, modern, and strategic sites that act as a powerful tool for growth.</p>
+                    <h1 class="reveal">Strategic Web Design <br><span class="gradient-text">Built to Convert.</span></h1>
+                    <p>A great website is your hardest-working employee—it should be winning you business 24/7. We build clean and modern sites that act as a powerful growth engine for professional small businesses</p>
+                    <div class="intro-buttons">
+                        <a href="/contact/index.html" class="btn-primary-gradient">Let's Talk Growth</a>
+                        <a href="#packages" class="btn-secondary">View Our Packages</a>
+                    </div>
                 </div>
 
                 <div class="intro-features reveal">
                     <div class="intro-feature-item">
                         <div class="icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 100-18 9 9 0 000 18z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15.092 9.41L12 12.502 8.908 9.41" /><path stroke-linecap="round" stroke-linejoin="round" d="M12 12.502V2.25" /></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="O 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 100-18 9 9 0 000 18z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15.092 9.41L12 12.502 8.908 9.41" /><path stroke-linecap="round" stroke-linejoin="round" d="M12 12.502V2.25" /></svg>
                         </div>
                         <div>
                             <h3>Goal-Oriented by Design</h3>
@@ -104,7 +206,7 @@
                 </div>
             </section>
 
-        <section id="benefits" class="about section-padding" style="padding-top: 0;">
+        <section id="benefits" class="about section-padding" >
             <div class="container">
                 <div class="section-header reveal">
                     <h2>Why a Custom Website Wins</h2>
@@ -169,8 +271,8 @@
         <section id="packages" class="services section-padding">
             <div class="container">
                 <div class="section-header reveal">
-                    <h2>Web Design Packages</h2>
-                    <p>Clear pricing for powerful results. Every package includes a complete SEO foundation to ensure your new website gets found on Google from day one.</p>
+                    <h2 id="wdp"><span class="gradient-text">Web Design Packages</span></h2>
+                    <p>Every package includes a complete SEO foundation to ensure your new website gets found on Google from day one. We believe in transparency and offer tiered solutions to fit various business needs and growth stages. From initial concept to launch and beyond, we ensure your online presence is a robust asset for your business.</p>
                 </div>
                  <div class="service-list">
                     <div class="service-item reveal">
@@ -180,10 +282,10 @@
                             </svg>
                         </div>
                         <h3>Starter Pack</h3>
-                        <p class="price" style="font-size: 1.5rem; color: var(--color-text-primary); margin-bottom: 1rem;">$2,800</p>
+                        <p class="price" style="font-size: 1.5rem; color: var(--color-text-primary); margin-bottom: 1rem;">$3,300</p>
                         <p>The perfect foundation for any small business. A professional, custom-coded website built for performance and designed to attract customers.</p>
                         <ul class="service-benefits">
-                            <li><span></span>5-7 Page Custom Website</li>
+                            <li><span></span>5 Page Custom Website</li>
                             <li><span></span>Foundational SEO Setup</li>
                             <li><span></span>Google Search Console Integration</li>
                             <li><span></span>Mobile-First Responsive Design</li>
@@ -228,7 +330,7 @@
         </section>
         
         <section class="cta">
-            <div class="container reveal section-padding">
+            <div class="container reveal">
                 <h2>Ready for a website that brings you customers?</h2>
                 <p>No confusing proposals, no technical headaches. Just a clear path to a better online presence that helps your business thrive.</p>
                 <a href="#contact" class="btn-primary-gradient">Let's Chat</a>
@@ -271,7 +373,7 @@
                         </li>
                         <li>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>
-                            <a href="tel:&#048;&#052;&#048;&#055;&#053;&#055;&#048;&#050;&#056;&#056;">&#048;&#052;&#048;&#055;&#053;&#055;&#048;&#050;&#056;&#056;</a>
+                            <a href="tel:&#048;&#052;&#048;&#055;&#053;&#055;&#048;&#050;&#056;&#056;">&#048;&#052;&#048;&#055;&#053;&#057;&#052;&#050;&#056;&#056;</a>
                         </li>
                         <li>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>

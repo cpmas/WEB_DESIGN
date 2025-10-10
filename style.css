@@ -16,7 +16,11 @@
 }
 
 .section-padding {
-    padding: 140px 0;
+    padding: 100px 0;
+}
+
+.section-padding-service {
+    padding: 80px 0;
 }
 
 body {
@@ -67,12 +71,15 @@ a { color: var(--color-text-primary); text-decoration: none; }
     transition: background-color 0.3s ease, padding 0.3s ease, border-bottom 0.3s ease;
     background-color: transparent;
     border-bottom: 1px solid transparent;
+    
 }
 .main-header.scrolled {
     background-color: rgba(16, 16, 16, 0.8);
-    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px) !important;
     border-bottom: 1px solid var(--color-border);
     padding: 15px 0;
+    
 }
 .main-header .container { display: flex; justify-content: space-between; align-items: center; }
 .logo { font-size: 24px; font-weight: 800; transition: font-size 0.3s ease; }
@@ -89,6 +96,7 @@ a { color: var(--color-text-primary); text-decoration: none; }
 .main-nav a::after {
     content: '';
     position: absolute;
+    
     bottom: 0;
     left: 0;
     width: 100%;
@@ -149,6 +157,8 @@ a { color: var(--color-text-primary); text-decoration: none; }
     background-color: rgba(255, 255, 255, 0.05);
 }
 .dropdown-menu li a:hover::after { transform: scaleX(0); }
+
+
 
 /* --- Contact Button Style --- */
 
@@ -483,7 +493,7 @@ pre, code {
 
 /* --- CTA Section --- */
 .cta { 
-    padding: 120px 0;
+    padding: 100px 0;
     text-align: center;
     position: relative;
 }
@@ -683,8 +693,8 @@ body.nav-open .hamburger::after {
         padding: 80px 0;
     }
 
-    .services::before {
-        display: none;
+    .hero-visual {
+        display: none; 
     }
     
     /* New wrapper for mobile above-the-fold content */
@@ -758,17 +768,29 @@ body.nav-open .hamburger::after {
   width: min(75vw, 400px);
 
   /* Blur + translucent bg */
-  background: rgba(16, 16, 16, 0.55);
-  -webkit-backdrop-filter: blur(16px);
-  backdrop-filter: blur(16px);
+  background: rgba(16, 16, 16, 0.9);
+  -webkit-backdrop-filter: blur(16px) !important;
+  backdrop-filter: blur(16px) !important;
 
   transform: translateX(100%);
   transition: transform 350ms ease-out;
-  z-index: 1500;              /* above content, below header button */
+  z-index: 1500;              
   padding-top: 5rem;
 
   /* Helps rendering on some devices */
   will-change: transform, backdrop-filter;
+}
+body.nav-open .nav-toggle {
+  position: fixed !important;
+  top: 50px !important;         
+  right: 16px !important;
+  transform: none !important;   
+  z-index: 4000 !important;     
+}
+
+body.nav-open .main-header.scrolled .nav-toggle {
+  top: 50px !important;
+  transform: none !important;
 }
     
     .main-nav.open {
@@ -783,7 +805,10 @@ body.nav-open .hamburger::after {
         gap: 2rem;
         
     }
-    
+    .main-header.scrolled {
+        backdrop-filter: none !important;
+    }
+
     .main-nav ul > li {
         width: 100%;
         text-align: center;
@@ -792,9 +817,9 @@ body.nav-open .hamburger::after {
 
     .main-nav a {
         font-size: 1.25rem;
-        display: inline-block;         /* override desktop 'display:flex' */
+        display: inline-block;         
         text-align: center;
-        margin: 0 auto;                /* center the inline-block in its li */
+        margin: 0 auto;                
         padding: 0.5rem 0;
     }
 }
@@ -817,4 +842,37 @@ body.nav-open .nav-toggle {
   position: fixed;                              /* float it above everything */
   top: 50px;
   right: 16px;
+}
+
+/* SEO/ADS HERO STYLES */
+.hero-section {
+    padding: 180px 0 100px 0;
+}
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 80px;
+    align-items: center;
+}
+.hero-text h1 {
+    font-size: 4.5rem;
+    line-height: 1.15;
+    margin-bottom: 25px;
+}
+.hero-text p {
+    font-size: 1.25rem;
+    max-width: 550px;
+}
+.visual-placeholder {
+    background-color: var(--color-background-card);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    height: 100%;
+    justify-content: space-between;
+    overflow: hidden;
+}
 }
