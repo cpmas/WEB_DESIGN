@@ -822,6 +822,13 @@ body.nav-open .main-header.scrolled .nav-toggle {
         margin: 0 auto;                
         padding: 0.5rem 0;
     }
+    .services .section-header {
+    display: block;
+    text-align: center;
+}
+.services .section-header h2 {
+    margin-bottom: 20px;
+}
 }
 @media (max-width: 768px) {
     .service-list { grid-template-columns: 1fr; }
