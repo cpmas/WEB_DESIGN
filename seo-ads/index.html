@@ -3,217 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEO & Google Ads Setup - Orbit Web Studio</title>
+    <title>SEO & Google Ads - Orbit Web Studio</title>
+    <meta name="description" content="Connect with more customers on the Mornington Peninsula. Our local SEO & Google Ads campaigns are designed for small business success.">
+    <link rel="canonical" href="https://orbitwebstudio.com.au/seo-google-ads/" />
+    <link rel="preload" href="style.css" as="style">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap">
     <style>
-        /* --- NEW HERO SECTION STYLES --- */
-        .hero-section {
-            padding: 180px 0 100px 0;
-        }
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.1fr;
-            gap: 80px;
-            align-items: center;
-        }
-        .hero-text h1 {
-            font-size: 4.5rem;
-            line-height: 1.15;
-            margin-bottom: 25px;
-        }
-        .hero-text p {
-            font-size: 1.25rem;
-            max-width: 550px;
-        }
-        
-        .service-detail-section {
-            border-top: 1px solid var(--color-border);
-        }
+    /* --- NEW HERO SECTION STYLES --- */
+    .hero-section { padding: 180px 0 100px 0; }
+    .hero-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 80px; align-items: center; }
+    .hero-text h1 { font-size: 4.5rem; line-height: 1.15; margin-bottom: 25px; }
+    .hero-text p { font-size: 1.25rem; max-width: 550px; margin-bottom: 40px; }
+    .service-detail-section { border-top: 1px solid var(--color-border); }
+    .service-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 80px; align-items: center; }   
+    .service-grid.ads-layout { grid-template-columns: 1fr 1.5fr; }  
+    .service-description-block h2 { font-size: 2.8rem; margin-bottom: 20px; line-height: 1.2; }   
+    .points-header { text-align: center; margin: 100px 0 60px 0; }
+    .points-header h3 { font-size: 2.5rem; }
+    .points-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }    
+    .point-item { background-color: var(--color-background-card); border: 1px solid var(--color-border); border-radius: 12px; padding: 30px; display: flex; flex-direction: column; }   
+    .point-item .icon { color: var(--color-accent-start); margin-bottom: 20px; }
+    .point-item .icon svg { width: 32px; height: 32px; }   
+    .point-item h4 { font-size: 1.5rem; margin-bottom: 10px; }  
+    .section-cta { text-align: center; margin: 100px auto 0 auto; max-width: 650px; }
+    .section-cta h3 { font-size: 2rem; margin-bottom: 15px; }
+    .section-cta p { margin-bottom: 30px; }
+    .visual-placeholder { background-color: var(--color-background-card); border: 1px solid var(--color-border); border-radius: 12px; padding: 0; display: flex; flex-direction: column; gap: 0; height: 100%; justify-content: space-between; overflow: hidden; }
 
-        .service-grid {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr;
-            gap: 80px;
-            align-items: center;
-        }
-        
-        .service-grid.ads-layout {
-             grid-template-columns: 1fr 1.5fr;
-        }
-        
-        .service-description-block h2 {
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-        
-        .points-header {
-            text-align: center;
-            margin: 100px 0 60px 0;
-        }
-        .points-header h3 {
-            font-size: 2.5rem;
-        }
-
-        .points-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-        }
-        
-        .point-item {
-            background-color: var(--color-background-card);
-            border: 1px solid var(--color-border);
-            border-radius: 12px;
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .point-item .icon {
-            color: var(--color-accent-start);
-            margin-bottom: 20px;
-        }
-        .point-item .icon svg {
-            width: 32px;
-            height: 32px;
-        }
-        
-        .point-item h4 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-        
-        .section-cta {
-            text-align: center;
-            margin: 100px auto 0 auto;
-            max-width: 650px;
-        }
-        .section-cta h3 {
-            font-size: 2rem;
-            margin-bottom: 15px;
-        }
-        .section-cta p {
-             margin-bottom: 30px;
-        }
-
-        .visual-placeholder {
-            background-color: var(--color-background-card);
-            border: 1px solid var(--color-border);
-            border-radius: 12px;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 0;
-            height: 100%;
-            justify-content: space-between;
-            overflow: hidden;
-        }
-
-        /* --- SERP ILLUSTRATION --- */
-        .serp-wrapper {
-            padding: 30px;
-        }
-        .serp-search-bar {
-            background-color: var(--color-background-dark);
-            border-radius: 20px;
-            padding: 10px 20px;
-            font-size: 0.9rem;
-            text-align: left;
-            border: 1px solid var(--color-border);
-            margin-bottom: 15px;
-        }
-        .serp-result {
-            background-color: var(--color-background-dark);
-            border-radius: 8px;
-            padding: 15px;
-            text-align: left;
-            border: 1px solid var(--color-border);
-            opacity: 0.5;
-            margin-top: 10px;
-        }
-        .serp-result.highlighted {
-            border-color: var(--color-accent-start);
-            transform: scale(1.05);
-            opacity: 1;
-            box-shadow: 0 10px 20px rgba(56, 189, 248, 0.1);
-        }
-        .serp-result .url {
-            font-size: 0.8rem;
-            color: var(--color-text-secondary);
-        }
-        .serp-result .title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--color-accent-start);
-            margin: 5px 0;
-        }
-        .serp-result .description {
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
-        
-        .service-content-header {
-            margin-bottom: 80px;
-            text-align: center;
-        }
-        .service-content-header .service-subtitle {
-            font-size: 1.2rem;
-            color: var(--color-accent-start);
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-        .service-content-header h2 {
-            font-size: 2.8rem;
-        }
-
-        .ads-text-block > h2 {
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-        .ads-text-block > .service-subtitle {
-            font-size: 1.2rem;
-            color: var(--color-accent-start);
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-        
-        /* --- RESPONSIVE STYLES --- */
-        @media (max-width: 992px) {
-             .section-padding {
-                 padding: 80px 0;
-             }
-             .hero-grid, .service-grid, .service-grid.ads-layout {
-                 grid-template-columns: 1fr;
-                 gap: 50px;
-             }
-             .hero-text h1 { font-size: 3.5rem; }
-             .hero-text p { margin-left: auto; margin-right: auto; }
-             .service-grid .service-visual {
-                 order: -1;
-             }
-             .service-description-block,
-             .ads-text-block,
-             .point-item {
-                text-align: center;
-             }
-             .point-item .icon {
-                 margin-left: auto;
-                 margin-right: auto;
-             }
-             .points-header, .section-cta {
-                 margin-top: 80px;
-             }
-        }
-        
-        @media (max-width: 768px) {
-            .points-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    /* --- SERP ILLUSTRATION --- */
+    .serp-wrapper { padding: 30px; }
+    .serp-search-bar { background-color: var(--color-background-dark); border-radius: 20px; padding: 10px 20px; font-size: 0.9rem; text-align: left; border: 1px solid var(--color-border); margin-bottom: 15px; }
+    .serp-result { background-color: var(--color-background-dark); border-radius: 8px; padding: 15px; text-align: left; border: 1px solid var(--color-border); opacity: 0.5; margin-top: 10px; }
+    .serp-result.highlighted { border-color: var(--color-accent-start); transform: scale(1.05); opacity: 1; box-shadow: 0 10px 20px rgba(56, 189, 248, 0.1); }
+    .serp-result .url { font-size: 0.8rem; color: var(--color-text-secondary); }
+    .serp-result .title { font-size: 1.1rem; font-weight: 700; color: var(--color-accent-start); margin: 5px 0; }
+    .serp-result .description { font-size: 0.9rem; line-height: 1.5; }
+    
+    /* --- NEW SECTION HEADING STYLES --- */
+    .service-content-header { margin-bottom: 80px; text-align: center; }
+    .service-subtitle { display: inline-block; background-color: var(--color-background-card); border: 1px solid var(--color-border); padding: 8px 20px; border-radius: 999px; /* Pill shape */ font-size: 0.9rem; font-weight: 700; color: var(--color-accent-start); margin-bottom: 20px; letter-spacing: 1px; text-transform: uppercase; }
+    .service-content-header h2 { font-size: 3.5rem; line-height: 1.2; }
+    
+    /* --- RESPONSIVE STYLES --- */
+    @media (max-width: 992px) {
+        .section-padding { padding: 80px 0; }
+        /* Mobile Hero Optimizations */
+        .hero-section { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding-top: 0; padding-bottom: 0; }
+        .hero-grid { grid-template-columns: 1fr; gap: 0; }
+        .hero-text { text-align: center; }
+        .hero-visual { display: none; }
+        .hero-text h1 { font-size: 3.5rem; }
+        .hero-text p { margin-left: auto; margin-right: auto; margin-bottom: 30px; }
+        /* General Section Stacking */
+        .service-grid { grid-template-columns: 1fr; gap: 50px; }
+        .service-grid .service-visual { order: -1; }
+        /* Ads Section Reordering */
+        .service-grid.ads-layout { display: flex; flex-direction: column; }
+        .ads-layout .ads-text-block { order: 1; }
+        .ads-layout .service-visual { order: 2; }
+        .service-content-header { margin-bottom: 50px;  }
+        .service-content-header h2 { font-size: 2.8rem; }
+        .service-description-block, .ads-text-block, .point-item { text-align: center; }
+        .point-item .icon { margin-left: auto; margin-right: auto; }
+        .points-header, .section-cta { margin-top: 80px; }
+    }
+    
+    @media (max-width: 768px) {
+        .points-grid { grid-template-columns: 1fr; }
+    }
+</style>
 </head>
 <body>
 
@@ -226,6 +85,7 @@
                     <div class="hero-text reveal">
                         <h1>Get Found. <br><span class="gradient-text">Stay in Control.</span></h1>
                         <p>We provide a powerful, one-off setup for SEO and Google Ads, then give you the knowledge to manage your own growth—no expensive monthly retainers required.</p>
+                        <a href="../contact/index.html" class="btn-primary-gradient">Book a Consultation</a>
                     </div>
                     <div class="hero-visual reveal" data-delay="100">
                         <div class="visual-placeholder" style="padding: 40px; justify-content: center;">
@@ -265,7 +125,7 @@
         <section class="service-detail-section section-padding">
             <div class="container">
                 <div class="service-content-header reveal">
-                    <p class="service-subtitle">FOUNDATIONAL SEO</p>
+                    <p class="service-subtitle">Foundational SEO</p>
                     <h2>Built-In, Not Bolted-On.</h2>
                 </div>
 
@@ -334,6 +194,12 @@
 
         <section class="service-detail-section section-padding">
             <div class="container">
+
+                <div class="service-content-header reveal">
+                    <p class="service-subtitle">Google Ads Launchpad</p>
+                    <h2>Your Campaign, Your Control.</h2>
+                </div>
+
                 <div class="service-grid ads-layout">
                     <div class="service-visual reveal" data-delay="100">
                         <div class="visual-placeholder" style="padding: 40px; justify-content:center;">
@@ -352,8 +218,6 @@
                         </div>
                     </div>
                     <div class="ads-text-block reveal">
-                        <p class="service-subtitle">GOOGLE ADS LAUNCHPAD</p>
-                        <h2>Your Campaign, Your Control.</h2>
                         <p>For small businesses, every dollar in the advertising budget counts. Paying hefty monthly management fees can cripple a campaign's effectiveness before it even has a chance to deliver results. Our "Launchpad" service is the solution: we do the expert-level, heavy lifting upfront to build a high-performance campaign, then we transfer the most valuable asset to you: knowledge.</p>
                         <p>This empowerment model means your budget is spent on ads, not retainers. We meticulously build and launch your Google Ads campaign based on deep research and best practices, and then provide comprehensive, 1-on-1 training so you can manage it yourself with confidence.</p>
                         <a href="../contact/index.html" class="btn-primary-gradient" style="margin-top: 40px; display: inline-block;">Book a Consultation</a>

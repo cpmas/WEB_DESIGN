@@ -4,130 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Orbit Web Studio</title>
+    <meta name="description" content="Small-business focused web studio delivering fast sites, SEO/Ads and custom development. Mornington Peninsula based, performance-first and built to grow with you">
+    <link rel="canonical" href="https://orbitwebstudio.com.au/about-us/" />
+    <link rel="preload" href="style.css" as="style">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap">
     <style>
-        /* --- About Page Specific Styles --- */
-        .page-header {
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 160px 0 80px 0;
-        }
-        .page-header h1 {
-            font-size: 4.5rem;
-            line-height: 1.1;
-            margin-bottom: 20px;
-        }
-        .page-header p {
-            font-size: 1.25rem;
-            max-width: 750px;
-            margin: 0 auto;
-        }
+    /* --- About Page Specific Styles --- */
+    .page-header { text-align: center; max-width: 900px; margin: 0 auto; padding: 160px 0 80px 0; }
+    .page-header h1 { font-size: 4.5rem; line-height: 1.1; margin-bottom: 20px; }
+    .page-header p { font-size: 1.25rem; max-width: 750px; margin: 0 auto; }
+    .about-intro-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 80px; align-items: center; max-width: 1200px; margin: 0 auto; }
+    .about-intro-grid .about-image-container { border-radius: 12px; overflow: hidden; border: 1px solid var(--color-border); line-height: 0; }
+    .about-intro-grid img { width: 100%; height: 100%; object-fit: cover; }
+    .about-intro-text h2 { font-size: 2.5rem; margin-bottom: 20px; }
 
-        .about-intro-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 80px;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+    /* --- Approach Section --- */
+    .approach-section { background-color: var(--color-background-card); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); }
+    .approach-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+    .approach-item { display: flex; gap: 25px; }
+    .approach-item .icon { flex-shrink: 0; color: var(--color-accent-start); }
+    .approach-item .icon svg { width: 32px; height: 32px; }
+    .approach-item h3 { font-size: 1.5rem; margin-bottom: 10px; }
 
-        .about-intro-grid .about-image-container {
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid var(--color-border);
-            line-height: 0; /* remove bottom space */
-        }
-        
-        .about-intro-grid img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+    /* --- Difference Section --- */
+    .difference-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 60px; }
+    .difference-card { background-color: var(--color-background-card); padding: 40px; border-radius: 12px; border: 1px solid var(--color-border); }
+    .difference-card h3 { font-size: 1.75rem; margin-bottom: 15px; color: var(--color-text-primary); }
+    .difference-card ul { list-style-type: none; padding: 0; margin: 0; }
+    .difference-card ul li { position: relative; padding-left: 25px; margin-bottom: 10px; }
+    .difference-card ul li::before { content: '—'; position: absolute; left: 0; color: var(--color-accent-start); font-weight: 700; }
+    .difference-card.pro-custom h3 { color: var(--color-accent-start); }
+    .difference-card.con-generic h3 { color: #f87171; }
+    .difference-card.con-generic ul li::before { color: #f87171; }
 
-        .about-intro-text h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
+    /* --- Mobile Responsive Styles --- */
+    @media (max-width: 992px) {
+        .page-header { padding: 120px 0 60px 0; }
+        .page-header h1 { font-size: 3.5rem; }
+        .about-intro-grid { grid-template-columns: 1fr; gap: 60px; text-align: center; }
+        .about-intro-text .btn-primary-gradient { margin-left: auto; margin-right: auto; }
+        #OD { margin-bottom: 20px; }
+    }
 
-        /* --- Approach Section --- */
-        .approach-section {
-             background-color: var(--color-background-card);
-             border-top: 1px solid var(--color-border);
-             border-bottom: 1px solid var(--color-border);
-        }
-        .approach-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-        .approach-item {
-            display: flex;
-            gap: 25px;
-        }
-        .approach-item .icon {
-            flex-shrink: 0;
-            color: var(--color-accent-start);
-        }
-        .approach-item .icon svg {
-            width: 32px;
-            height: 32px;
-        }
-        .approach-item h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-
-        /* --- Difference Section --- */
-        .difference-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-top: 60px;
-        }
-        .difference-card {
-            background-color: var(--color-background-card);
-            padding: 40px;
-            border-radius: 12px;
-            border: 1px solid var(--color-border);
-        }
-        .difference-card h3 {
-            font-size: 1.75rem;
-            margin-bottom: 15px;
-            color: var(--color-text-primary);
-        }
-        .difference-card ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-        .difference-card ul li {
-            position: relative;
-            padding-left: 25px;
-            margin-bottom: 10px;
-        }
-        .difference-card ul li::before {
-            content: '—';
-            position: absolute;
-            left: 0;
-            color: var(--color-accent-start);
-            font-weight: 700;
-        }
-        .difference-card.pro-custom h3 { color: var(--color-accent-start); }
-        .difference-card.con-generic h3 { color: #f87171; } /* A contrasting red */
-        .difference-card.con-generic ul li::before { color: #f87171; }
-
-        @media (max-width: 992px) {
-            .page-header h1 { font-size: 3.5rem; }
-            .about-intro-grid { grid-template-columns: 1fr; gap: 60px; }
-        }
-        @media (max-width: 768px) {
-            .difference-grid { grid-template-columns: 1fr; }
-        }
-
-    </style>
+    @media (max-width: 768px) {
+        .difference-grid { grid-template-columns: 1fr; }
+        .approach-item { text-align: center; flex-direction: column; align-items: center; }
+    }
+</style>
 </head>
 <body>
 
@@ -197,7 +121,7 @@
 
         <section class="difference-section section-padding">
             <div class="container">
-                <div class="process-header reveal">
+                <div class="process-header reveal" id="OD">
                     <h2>The Orbit Difference</h2>
                     <p>Why a custom-coded website is a superior long-term investment for your business.</p>
                 </div>
