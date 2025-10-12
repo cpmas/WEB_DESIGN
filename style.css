@@ -40,10 +40,7 @@
   src: url('/fonts/manrope-v20-latin-800.woff2') format('woff2');
 }
 
-.page-wrapper {
-    width: 100%;
-    overflow-x: hidden;
-}
+
 
 /* --- Scrolled Header Logo Styling --- */
 .main-header.scrolled .logo {
@@ -727,6 +724,9 @@ body.nav-open .hamburger::after {
         gap: 0;
         align-items: stretch;
     }
+    .code-snippet-container { 
+    transform: none; 
+}
 
     .section-padding {
         padding: 80px 0;
