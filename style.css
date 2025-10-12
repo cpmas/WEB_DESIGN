@@ -269,7 +269,7 @@ a { color: var(--color-text-primary); text-decoration: none; }
 .hero-text h1 .gradient-text {
     background: linear-gradient(90deg, var(--color-accent-start), var(--color-accent-end));
     -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    background-clip: text; text-fill-color: transparent;
+    background-clip: text; 
 }
 .hero-text p.tagline {
     max-width: 500px;
