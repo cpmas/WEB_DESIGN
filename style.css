@@ -715,6 +715,7 @@ body.nav-open .hamburger::after {
 
     .hero-wrapper { 
         height: auto;
+        max-width: 100vw;
     }
     .hero {
         height: auto;
