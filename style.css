@@ -40,6 +40,17 @@
   src: url('/fonts/manrope-v20-latin-800.woff2') format('woff2');
 }
 
+
+
+/* --- Scrolled Header Logo Styling --- */
+.main-header.scrolled .logo {
+    font-size: 22px; /* Optional: slightly reduce font size on scroll */
+}
+
+.main-header.scrolled .logo img {
+    height: 32px;
+}
+
 .section-padding {
     padding: 100px 0;
 }
