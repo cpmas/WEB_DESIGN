@@ -757,7 +757,7 @@ body.nav-open .hamburger::after {
         justify-content: center; /* Changed from flex-end */
         padding-bottom: 2rem; /* Kept for spacing */
     }
-    .hero-text h1 { font-size: 4.3rem; }
+    .hero-text h1 { font-size: 4rem; }
     .hero-text p.tagline { margin-left: auto; margin-right: auto; }
 
     /* Make features section part of the initial view */
