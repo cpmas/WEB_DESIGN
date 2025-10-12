@@ -724,9 +724,7 @@ body.nav-open .hamburger::after {
         gap: 0;
         align-items: stretch;
     }
-    .code-snippet-container { 
-    transform: none; 
-}
+    
 
     .section-padding {
         padding: 80px 0;
@@ -752,6 +750,7 @@ body.nav-open .hamburger::after {
 
     .hero-text {
         /* flex-grow: 1; -> REMOVED */
+        max-width: 100vw; 
         display: flex;
         flex-direction: column;
         justify-content: center; /* Changed from flex-end */
