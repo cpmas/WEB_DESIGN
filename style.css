@@ -932,7 +932,7 @@ body.nav-open .nav-toggle {
 
 
 /* Make sure hero wrappers never exceed viewport width */
-.hero, .hero .container { width: 100%; max-width: 100%; overflow-x: clip; }
+.hero, .hero .container { width: 100%; max-width: 100%;  }
 
 /* If any hero background uses 100vw, switch to 100% */
 .hero-bg, .hero-grid { width: 100%; } /* not 100vw */
