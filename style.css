@@ -757,7 +757,7 @@ body.nav-open .hamburger::after {
         justify-content: center; /* Changed from flex-end */
         padding-bottom: 2rem; /* Kept for spacing */
     }
-    .hero-text h1 { font-size: 3.5rem; }
+    .hero-text h1 { font-size: 3.8rem; }
     .hero-text p.tagline { margin-left: auto; margin-right: auto; }
 
     /* Make features section part of the initial view */
@@ -921,33 +921,32 @@ body.nav-open .nav-toggle {
     overflow: hidden;
 }
 
-
-/* Mobile: show ONLY H1 + tagline + button, centered */
+/* Mobile: perfect vertical centering for H1 + text + button */
 @media (max-width: 992px) {
-  /* Fill the safe viewport and center content */
+  /* 1) Make the hero fill the screen again */
+  .hero-wrapper,
+  .hero,
+  .hero .container {
+    min-height: 100svh;   /* safe viewport height (works with iOS chrome) */
+  }
+
+  /* 2) Center the content stack within that space */
   .hero-content-top{
     min-height: calc(100svh - var(--header-height-scrolled));
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    padding-top: 0;           
+    padding-top: 0;       /* we’re subtracting the header already */
     padding-bottom: 0;
+    box-sizing: border-box;
   }
 
-  /* Keep just these three visible */
-  .hero-visual { display: none !important; }   /* already off on mobile, belt & braces */
-  .features-section { display: none !important; }
+  /* 3) Trim spacing so it really looks centered */
+  .hero-text{ margin: 0 auto; max-width: 28ch; padding: 0; }
+  .hero-text h1{ margin: 0 0 14px; }
+  .hero-text p.tagline{ margin: 0 0 18px; }
 
-  /* Tighten the text block */
-  .hero-text { margin: 0 auto; max-width: 28ch; }
-  .hero-text h1 { margin-bottom: 14px; }       /* keep it punchy */
-  .hero-text p.tagline { margin: 0 0 18px 0; } /* small gap above the button */
-  .btn-primary-gradient { align-self: center; }
-  
-  /* Avoid any stray horizontal scroll contributions */
-  .hero, .hero .container, .hero-wrapper { width: 100%; max-width: 100%; overflow-x: clip; }
+  /* 4) Keep extras out of the first view (optional) */
+  .features-section{ display: none !important; }
 }
-
-
-
