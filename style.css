@@ -929,9 +929,6 @@ body.nav-open .nav-toggle {
 
 
 
-/* 1) Clamp any stray transformed/fixed layers (esp. off-canvas nav) */
-html, body { overflow-x: hidden; }               /* apply to html too, not just body */
-.hero, .hero-wrapper, .hero .container { max-width: 100%; overflow-x: clip; }
 
 /* 2) Belt-and-braces for the slide-out nav so it never affects layout when closed */
 @media (max-width: 992px) {
@@ -939,6 +936,5 @@ html, body { overflow-x: hidden; }               /* apply to html too, not just 
   body:not(.nav-open) .main-nav { transform: translateX(100%); } /* ensure off-screen */
 }
 
-/* 3) Prevent long headings/inline SVGs from nudging width */
-.hero-text h1 { word-break: break-word; }
+
 .features-container, .feature-item svg { max-width: 100%; }
