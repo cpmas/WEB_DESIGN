@@ -922,13 +922,32 @@ body.nav-open .nav-toggle {
 }
 
 
+/* Mobile: show ONLY H1 + tagline + button, centered */
+@media (max-width: 992px) {
+  /* Fill the safe viewport and center content */
+  .hero-content-top{
+    min-height: calc(100svh - var(--header-height-scrolled));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding-top: 0;           
+    padding-bottom: 0;
+  }
+
+  /* Keep just these three visible */
+  .hero-visual { display: none !important; }   /* already off on mobile, belt & braces */
+  .features-section { display: none !important; }
+
+  /* Tighten the text block */
+  .hero-text { margin: 0 auto; max-width: 28ch; }
+  .hero-text h1 { margin-bottom: 14px; }       /* keep it punchy */
+  .hero-text p.tagline { margin: 0 0 18px 0; } /* small gap above the button */
+  .btn-primary-gradient { align-self: center; }
+  
+  /* Avoid any stray horizontal scroll contributions */
+  .hero, .hero .container, .hero-wrapper { width: 100%; max-width: 100%; overflow-x: clip; }
+}
 
 
 
-
-
-/* Make sure hero wrappers never exceed viewport width */
-.hero, .hero .container { width: 100%; max-width: 100%;  }
-
-/* If any hero background uses 100vw, switch to 100% */
-.hero-bg, .hero-grid { width: 100%; } /* not 100vw */
