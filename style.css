@@ -15,6 +15,31 @@
     --header-height-scrolled: 74px;
 }
 
+/* manrope-regular - latin */
+@font-face {
+  font-display: swap; 
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/manrope-v20-latin-regular.woff2') format('woff2'); 
+}
+/* manrope-700 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/manrope-v20-latin-700.woff2') format('woff2'); 
+}
+/* manrope-800 - latin */
+@font-face {
+  font-display: swap; 
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 800;
+  src: url('/fonts/manrope-v20-latin-800.woff2') format('woff2');
+}
+
 .section-padding {
     padding: 100px 0;
 }
@@ -182,13 +207,14 @@ a { color: var(--color-text-primary); text-decoration: none; }
 
 /* Add a hover effect for the button */
 .cta-button:hover {
-    transform: translateY(-2px);
+    transform: translateY(-4px);
     box-shadow: 0 8px 15px rgba(56, 189, 248, 0.2);
 }
 
 .main-nav a.cta-button {
     padding-bottom: 10px; /* Balances the top padding for perfect alignment */
 }
+
 
 /* Adjustments for the mobile menu layout */
 @media (max-width: 992px) {
@@ -250,9 +276,11 @@ a { color: var(--color-text-primary); text-decoration: none; }
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .btn-primary-gradient:hover {
-    transform: translateY(-3px);
+    transform: translateY(-6px);
     box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2);
 }
+
+
 
 /* --- Features Section --- */
 .features-section {
@@ -882,4 +910,8 @@ body.nav-open .nav-toggle {
     justify-content: space-between;
     overflow: hidden;
 }
-}
+
+
+
+
+
