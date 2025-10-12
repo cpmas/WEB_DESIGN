@@ -919,33 +919,3 @@ body.nav-open .nav-toggle {
     height: 100%;
     justify-content: space-between;
     overflow: hidden;
-}
-
-/* Mobile: perfect vertical centering for H1 + text + button */
-@media (max-width: 992px) {
-  /* 1) Make the hero fill the screen again */
-  .hero-wrapper,
-  .hero,
-  .hero .container {
-    min-height: 100svh;   /* safe viewport height (works with iOS chrome) */
-  }
-
-  /* 2) Center the content stack within that space */
-  .hero-content-top{
-    min-height: calc(100svh - var(--header-height-scrolled));
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    padding-top: 0;       /* we’re subtracting the header already */
-    padding-bottom: 0;
-    box-sizing: border-box;
-  }
-
-  /* 3) Trim spacing so it really looks centered */
-  .hero-text{ margin: 0 auto; max-width: 28ch; padding: 0; }
-  .hero-text h1{ margin: 0 0 14px; }
-  .hero-text p.tagline{ margin: 0 0 18px; }
-
-
-}
