@@ -947,6 +947,5 @@ body.nav-open .nav-toggle {
   .hero-text h1{ margin: 0 0 14px; }
   .hero-text p.tagline{ margin: 0 0 18px; }
 
-  /* 4) Keep extras out of the first view (optional) */
-  .features-section{ display: none !important; }
+
 }
