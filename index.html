@@ -9,6 +9,154 @@
     <link rel="preload" href="/fonts/manrope-v13-latin-800.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/style.css" as="style">
     <link rel="stylesheet" href="/style.css">
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                "@type": ["LocalBusiness", "ProfessionalService"],
+                "@id": "https://orbitwebstudio.com.au/#org",
+                "name": "Orbit Web Studio",
+                "url": "https://orbitwebstudio.com.au/",
+                "description": "Orbit Web Studio builds fast, conversion-focused websites and simple software for small businesses in Mornington and Melbourne—clear messaging, lean code, and campaigns that win work.",
+                "telephone": "+61407570288",
+                "email": "info@orbitwebstudio.com.au",
+                "priceRange": "A$3,300–5,000+",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "20 Main St",
+                    "addressLocality": "Mornington",
+                    "addressRegion": "VIC",
+                    "postalCode": "3931",
+                    "addressCountry": "AU"
+                },
+                "openingHoursSpecification": [
+                    {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": [
+                        "Monday",
+                        "Tuesday",
+                        "Wednesday",
+                        "Thursday",
+                        "Friday"
+                    ],
+                    "opens": "09:00",
+                    "closes": "17:00"
+                    }
+                ],
+                "areaServed": [
+                    {
+                    "@type": "AdministrativeArea",
+                    "name": "Mornington Peninsula"
+                    },
+                    {
+                    "@type": "AdministrativeArea",
+                    "name": "Melbourne"
+                    }
+                ],
+                "serviceArea": [
+                    {
+                    "@type": "AdministrativeArea",
+                    "name": "Mornington Peninsula"
+                    },
+                    {
+                    "@type": "AdministrativeArea",
+                    "name": "Melbourne"
+                    }
+                ],
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "contactType": "customer support",
+                    "telephone": "+61407570288",
+                    "email": "info@orbitwebstudio.com.au",
+                    "areaServed": ["AU"],
+                    "availableLanguage": ["en-AU"]
+                }
+                },
+                {
+                "@type": "WebSite",
+                "@id": "https://orbitwebstudio.com.au/#website",
+                "url": "https://orbitwebstudio.com.au/",
+                "name": "Orbit Web Studio",
+                "publisher": { "@id": "https://orbitwebstudio.com.au/#org" },
+                "inLanguage": "en-AU"
+                },
+                {
+                "@type": "WebPage",
+                "@id": "https://orbitwebstudio.com.au/#webpage",
+                "url": "https://orbitwebstudio.com.au/",
+                "name": "Orbit Web Studio — Web Design & Simple Software",
+                "isPartOf": { "@id": "https://orbitwebstudio.com.au/#website" },
+                "about": { "@id": "https://orbitwebstudio.com.au/#org" },
+                "primaryImageOfPage": {
+                    "@type": "ImageObject",
+                    "@id": "https://orbitwebstudio.com.au/#primaryimage"
+                },
+                "breadcrumb": {
+                    "@type": "BreadcrumbList",
+                    "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://orbitwebstudio.com.au/"
+                    }
+                    ]
+                },
+                "inLanguage": "en-AU"
+                },
+
+                {
+                "@type": "Service",
+                "@id": "https://orbitwebstudio.com.au/#service-web-design",
+                "name": "Web Design & Development",
+                "description": "High-performance, conversion-focused websites built with clean HTML/CSS/JS and streamlined content—fast loads, clear messaging, and simple edits.",
+                "provider": { "@id": "https://orbitwebstudio.com.au/#org" },
+                "areaServed": [
+                    { "@type": "AdministrativeArea", "name": "Mornington Peninsula" },
+                    { "@type": "AdministrativeArea", "name": "Melbourne" }
+                ],
+                "serviceType": "Web design",
+                "url": "https://orbitwebstudio.com.au/web-design-mornington/",
+                "offers": {
+                    "@type": "Offer",
+                    "priceCurrency": "AUD",
+                    "price": "3300",
+                    "url": "https://orbitwebstudio.com.au/web-design-mornington/",
+                    "category": "Starting price"
+                }
+                },
+                {
+                "@type": "Service",
+                "@id": "https://orbitwebstudio.com.au/#service-software",
+                "name": "Simple Software & Tools",
+                "description": "Lightweight internal tools and micro-apps that automate repetitive tasks and keep your ops lean—built to be fast, simple, and cost-effective.",
+                "provider": { "@id": "https://orbitwebstudio.com.au/#org" },
+                "areaServed": [
+                    { "@type": "AdministrativeArea", "name": "Mornington Peninsula" },
+                    { "@type": "AdministrativeArea", "name": "Melbourne" }
+                ],
+                "serviceType": "Software development",
+                "url": "https://orbitwebstudio.com.au/software/"
+                },
+                {
+                "@type": "Service",
+                "@id": "https://orbitwebstudio.com.au/#service-seo-ads",
+                "name": "Local SEO & Google Ads",
+                "description": "Lean, local campaigns that prioritise qualified leads over vanity metrics—focused on ROI with tight tracking and fast landing pages.",
+                "provider": { "@id": "https://orbitwebstudio.com.au/#org" },
+                "areaServed": [
+                    { "@type": "AdministrativeArea", "name": "Mornington Peninsula" },
+                    { "@type": "AdministrativeArea", "name": "Melbourne" }
+                ],
+                "serviceType": "Search engine optimisation and advertising",
+                "url": "https://orbitwebstudio.com.au/seo-google-ads/"
+                }
+            ]
+            }
+
+    </script>
 </head>
 <body>
 
@@ -82,7 +230,7 @@
                     <p>We build websites and tools that solve real business problems, designed around your specific goals. Our work combines clean, professional design with smart technology to create a fast, effective online presence that helps you find more customers.</p>
                 </div>
                  <div class="service-list">
-                    <a href="/web-design/" id="core-web-design" class="service-card-link reveal">
+                    <a href="/web-design-mornington/" id="core-web-design" class="service-card-link reveal">
                         <div class="service-item">
                             <div class="service-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="currentColor">
@@ -114,7 +262,7 @@
                             </ul>
                         </div>
                     </a>
-                    <a href="/seo-ads/" id="local-seo" class="service-card-link reveal" data-delay="200">
+                    <a href="/seo-google-ads/" id="local-seo" class="service-card-link reveal" data-delay="200">
                         <div class="service-item">
                             <div class="service-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor">
@@ -254,9 +402,9 @@
                 <div class="footer-links">
                     <h4>Services</h4>
                     <ul>
-                        <li><a href="/web-design/">Web Design</a></li>
+                        <li><a href="/web-design-mornington/">Web Design</a></li>
                         <li><a href="/software/">Custom Software</a></li>
-                        <li><a href="/seo-ads/">SEO/Ads</a></li>
+                        <li><a href="/seo-google-ads/">SEO/Ads</a></li>
                     </ul>
                 </div>
 
