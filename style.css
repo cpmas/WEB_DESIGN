@@ -40,7 +40,8 @@
   src: url('/fonts/manrope-v20-latin-800.woff2') format('woff2');
 }
 
-html, body {
+.page-wrapper {
+    width: 100%;
     overflow-x: hidden;
 }
 
